@@ -1,12 +1,38 @@
 # Practical Common Lisp
-Playing around with [Practical Common Lisp](http://www.gigamonkeys.com/book/) Book.
+Playing around with [Practical Common Lisp](http://www.gigamonkeys.com/book/) book.
 
 # Chapters #
 
 ## 1. Introduction: Why Lisp? ##
 
++ LISP stands for LISt Processing
++ It is known as "the programmable programming language"
++ clean map between ideas about how the program works and the code written
++ easy to develop code incrementally and interactively (interactive REPL)
++ Designed by John McCarthy in 1956 for "symbolic data processing", well suited for AI programming
++ Lisp is one of computer science's "classical" languages, based on ideas that have stood the test of time.
+
 ## 2. Lather, Rinse, Repeat: A Tour of the REPL ##
 
++ Common Lisp is defined by its standard (a contract between any Common Lisp vendor and Common Lisp programmers)
+  + some things were intentionally left unspecified in order to allow continuing experimentation by implementers
+  + .emacs
+  ```
+  (setq inferior-lisp-program "sbcl")
+  (add-to-list 'load-path "~/.slime")
+  (require 'slime)
+  (slime-setup)
+  ```
+  + Lisp syntax overview
+    + Anything in parentheses is a list
+	+ It treats the first element of a list as the function name, and the rest as expressions to be evaluated and pass them as function parameters.
+	+ Strings and numbers are self-evaluating objects (when evaluated, they evaluate to themselves)
+	+ Basic building blocks:
+	  + *functions* are defined with *DEFUN*: `(defun hello-world () (format t "hello, world"))`
+	    + (defun <name> (<parameters>) <body>)
+		+ (defun name varlist &rest body)
+	+ load a file and its definitions:
+	  + `(load "~/ch1-hello-world.lisp")`
 ## 3. Practical: A Simple Database ##
 
 ## 4. Syntax and Semantics ##
